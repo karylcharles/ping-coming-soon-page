@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    // Primary
+    --blue: hsl(223, 87%, 63%);
+
+    // Secondary
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+
+    // Neutral
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+}
+
+html{
+    font-size: 67.5%;
+}
+
+body{
+    font-size: 2rem;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.App{
+    padding: 5rem 0;
+    &-row-1{
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+
+        &__logo{
+            margin-bottom: 2.5rem;
+        }
+
+        &__title{
+            color: var(--gray);
+            font-weight: 300;
+            font-size: 5.2rem;
+            margin-bottom: 0.7rem;
+
+            & span{
+                font-weight: 700;
+                color: black;
+            }
+        }
+
+        &__sub{
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        &-form{
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 8rem;
+
+            &__input{
+                width: 100%;
+                flex: 70%;
+                position: relative;
+
+                & input{
+                    width: 100%;
+                    padding: 1.6rem 2.3rem;
+                    border-radius: 100px;
+                    border: 1px solid var(--pale-blue);
+
+                    &:focus{
+                        outline: none;
+                    }
+
+                    &::placeholder{
+                        font-family: inherit;
+                        color: var(--pale-blue);
+                    }
+                }
+            }
+
+            &__btn{
+                width: 100%;
+                flex: 30%;
+
+                & button{
+                    width: 100%;
+                    padding: 1.6rem 1rem;
+                    border-radius: 100px;
+                    cursor: pointer;
+                    background-color: var(--blue);
+                    border: none;
+                    color: #fff;
+                    font-family: inherit;
+                    font-weight: 600;
+                    box-shadow: 0 3px 10px 0 hsla(223, 87%, 63%, 0.5);
+
+                    &:hover{
+                        background-color: hsl(223, 87%, 73%);
+                    }
+                }
+            }
+        }
+
+        &-dashboard{
+            width: 100%;
+            margin-bottom: 7rem;
+
+            & img{
+                width: 100%;
+            }
+        }
+
+        &-footer{
+            &__icon-box{
+                display: flex;
+                justify-content: center;
+                gap: 1.3rem;
+                margin-bottom: 2.3rem;
+
+                & div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid var(--pale-blue);
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: var(--blue);
+
+                        & svg{
+                            fill: #fff;
+                        }
+                    }
+                }
+
+                & svg{
+                    width: 20px;
+                    height: 20px;
+                    fill: var(--blue);
+                }
+            }
+
+            &__copyright{
+                color: var(--gray);
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+.error{
+    border: 1px solid var(--light-red) !important;   
+}
+
+.hide{
+    display: none;
+}
+
+.errorMsg{
+    color: var(--light-red);
+    font-size: 1.2rem;
+    position: absolute;
+    top: 5.3rem;
+    left: 2.5rem;
+}
+
+@media (max-width: 375px){
+    .App{
+        padding-top: 9rem;
+        &-row-1{
+            width: 90%;
+
+    
+            &__logo{
+                width: 5.5rem;
+            }
+    
+            &__title{
+                font-size: 2.2rem;
+                margin-bottom: 1.4rem;
+            }
+    
+            &__sub{
+                font-size: 1.2rem;
+            }
+    
+            &-form{
+                display: block;
+                margin-bottom: 6.8rem;
+    
+                &__input{
+                    margin-bottom: 1rem;
+    
+                    & input{
+                        width: 90%;
+                    }
+                }
+    
+                &__btn{
+    
+                    & button{
+                        width: 90%;
+                        
+                        &:hover{
+                        }
+                    }
+                }
+            }
+
+            &-dashboard{
+                margin-bottom: 11rem;
+            }
+
+            &-footer{
+                &__icon-box{
+                    
+    
+                    & div{
+                        width: 30px;
+                        height: 30px;
+                    }
+    
+                    & svg{
+                        width: 13px;
+                        height: 13px;
+                    }
+                }
+    
+                &__copyright{
+                    font-size: 1rem;
+                }
+            }            
+
+        }
+
+    }
+}
